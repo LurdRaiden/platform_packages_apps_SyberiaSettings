@@ -19,6 +19,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceScreen
+        android:layout="@layout/syberia_logo_layout"
+        android:key="syberia_logo" />
+
+    <PreferenceScreen
         android:fragment="com.syberia.settings.fragments.SystemSettings"
         android:icon="@drawable/ic_system_category"
         android:key="system_category"

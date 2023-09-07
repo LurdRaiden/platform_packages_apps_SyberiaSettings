@@ -34,7 +34,7 @@ import com.android.settings.R;
 import android.net.Uri;
 
 import com.android.settings.dashboard.DashboardFragment;
-
+import com.android.internal.util.syberia.SyberiaUtils;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference;
 import androidx.preference.ListPreference;
@@ -65,12 +65,14 @@ import android.os.UserHandle;
 public class UiThemingSettings extends DashboardFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "UiThemingSettings";
+    private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
 
     private String MONET_ENGINE_COLOR_OVERRIDE = "monet_engine_color_override";
     private String MONET_ENGINE_BGCOLOR_OVERRIDE = "monet_engine_bgcolor_override";
 
     private ColorPickerPreference mMonetColor;
     private ColorPickerPreference mMonetBgColor;
+    private ListPreference mDashBoardStyle;
 
     private Handler mHandler;
     private IOverlayManager mOverlayManager;
@@ -79,6 +81,11 @@ public class UiThemingSettings extends DashboardFragment implements OnPreference
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
+
         final PreferenceScreen screen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
@@ -134,6 +141,10 @@ public class UiThemingSettings extends DashboardFragment implements OnPreference
             int intBgHex = ColorPickerPreference.convertToColorInt(hexbg);
             Settings.Secure.putInt(resolver,
                 MONET_ENGINE_BGCOLOR_OVERRIDE, intBgHex);
+            return true;
+        }
+        if (preference == mDashBoardStyle) {
+            SyberiaUtils.showSettingsRestartDialog(getContext());
             return true;
         }
         return false;

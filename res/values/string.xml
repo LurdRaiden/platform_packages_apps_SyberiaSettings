@@ -19,6 +19,14 @@
     <string name="syberia_settings_title">Syberia Settings</string>
     <string name="syberia_dashboard_summary">Most extra features added into Syberia Project</string>
 
+
+    <!-- Settings dashboard style -->
+    <string name="settings_dashboard_style_title">Settings style</string>
+    <string name="settings_dashboard_style_summary">Settings homepage and UI style</string>
+    <string name="settings_dashboard_style_aosp">Default</string>
+    <string name="settings_dashboard_style_dot">DoT</string>
+    <string name="settings_dashboard_style_syberia">Syberia</string>
+
     <string name="gestures_category_title">Gestures</string>
     <string name="gestures_category_summary">Various gestures settings</string>
     <string name="system_category_title">System</string>
