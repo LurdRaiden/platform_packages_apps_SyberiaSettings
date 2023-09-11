@@ -78,7 +78,17 @@ public class SyberiaSettings extends SettingsPreferenceFragment {
 
             if (mKey == null) continue;
 
-            if (mDashBoardStyle == 1 || mDashBoardStyle == 2){
+            if (mKey.equals("syberia_settings_header")) {
+                            mPreference.setLayoutResource(R.layout.syberia_settings_header);
+                            continue;
+                        }
+            if (mDashBoardStyle == 0) {
+                    if (mKey.equals("top_level_about_device")){
+                mPreference.setLayoutResource(R.layout.top_about);
+                    }else {
+                mPreference.setLayoutResource(R.layout.top_level_card);
+                    }
+                } else if (mDashBoardStyle == 1 || mDashBoardStyle == 2){
                if (mKey.equals("system_category")) {
                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
                 } else if (mKey.equals("about_team")) {

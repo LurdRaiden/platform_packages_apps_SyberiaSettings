@@ -19,6 +19,21 @@
     <string name="syberia_settings_title">Syberia Settings</string>
     <string name="syberia_dashboard_summary">Most extra features added into Syberia Project</string>
 
+    <!-- QS panel styles -->
+    <string name="theme_customization_qs_style_title">QS Panel style</string>
+    <string name="theme_customization_qs_style_summary">Set custom QS Panel style</string>
+
+    <!-- QS panel styles -->
+    <string name="theme_customization_qs_panel_title">QS Panel style</string>
+    <string name="theme_customization_qs_panel_summary">Set custom QS Panel style</string>
+
+    <!-- Brightness bar styles -->
+    <string name="theme_customization_brightness_bar_title">Brightness bar style</string>
+    <string name="theme_customization_brightness_bar_summary">Set custom brightness bar style</string>
+
+    <!-- Notifications style -->
+    <string name="theme_customization_notifications_title">Notifications style</string>
+    <string name="theme_customization_notifications_summary">Set custom notifications style</string>
 
     <!-- Settings dashboard style -->
     <string name="settings_dashboard_style_title">Settings style</string>
